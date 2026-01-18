@@ -201,6 +201,69 @@ Edit `src/styles.css` for global styles. The site uses Tailwind CSS - edit templ
 
 To customise Tailwind, edit `tailwind.config.js`.
 
+### Colors
+
+The site uses semantic color tokens defined in `tailwind.config.js`. This makes it easy to change the color scheme from a single location.
+
+**Changing the accent color:**
+
+To change the primary accent color (used for links, buttons, tags, etc.), edit the `primary` color in `tailwind.config.js`:
+
+```javascript
+import colors from "tailwindcss/colors";
+
+export default {
+  theme: {
+    extend: {
+      colors: {
+        // Change from cyan to any Tailwind color palette
+        primary: colors.blue,      // Blue theme
+        primary: colors.emerald,   // Green theme
+        primary: colors.violet,    // Purple theme
+        primary: colors.rose,      // Pink theme
+        // ...
+      }
+    }
+  }
+}
+```
+
+**Available color tokens:**
+
+| Token | Purpose | Default |
+|-------|---------|---------|
+| `primary` | Accent color for links, interactive elements | `colors.cyan` |
+| `background` | Main page background | `gray-950` |
+| `background-surface` | Header, footer, cards | `gray-900` |
+| `background-elevated` | Hover states, code blocks, tags | `gray-800` |
+| `foreground` | Body text | `gray-300` |
+| `foreground-heading` | Headings, strong emphasis | `gray-100` |
+| `foreground-muted` | Secondary text, excerpts | `gray-400` |
+| `foreground-subtle` | Timestamps, placeholders | `gray-500` |
+| `foreground-disabled` | Disabled states | `gray-600` |
+| `border` | Standard borders | `gray-700` |
+| `border-subtle` | Subtle dividers | `gray-800` |
+
+**Custom colors:**
+
+You can also define custom colors instead of using Tailwind's built-in palettes:
+
+```javascript
+colors: {
+  primary: {
+    300: '#93c5fd',
+    400: '#60a5fa',
+    500: '#3b82f6',
+  },
+  background: {
+    DEFAULT: '#0a0a0a',
+    surface: '#141414',
+    elevated: '#1e1e1e',
+  },
+  // ...
+}
+```
+
 ## npm Scripts
 
 | Script | Description |

@@ -18,8 +18,8 @@ function renderNavLinks(currentPath) {
 
       return `<a href="${href}" class="px-3 py-2 rounded-md text-sm font-medium ${
         isActive
-          ? "text-cyan-400 bg-gray-800"
-          : "text-gray-300 hover:text-cyan-400 hover:bg-gray-800"
+          ? "text-primary-400 bg-background-elevated"
+          : "text-foreground hover:text-primary-400 hover:bg-background-elevated"
       } transition-colors">${link.label}</a>`;
     })
     .join("\n            ");
@@ -35,8 +35,8 @@ function renderMobileNavLinks(currentPath) {
 
       return `<a href="${href}" class="block px-3 py-2 rounded-md text-base font-medium ${
         isActive
-          ? "text-cyan-400 bg-gray-800"
-          : "text-gray-300 hover:text-cyan-400 hover:bg-gray-800"
+          ? "text-primary-400 bg-background-elevated"
+          : "text-foreground hover:text-primary-400 hover:bg-background-elevated"
       } transition-colors">${link.label}</a>`;
     })
     .join("\n          ");
@@ -66,7 +66,7 @@ function renderSocialLinks() {
   if (!links) return '';
 
   const socialItems = [];
-  const linkClass = "text-gray-500 hover:text-cyan-400 transition-colors";
+  const linkClass = "text-foreground-subtle hover:text-primary-400 transition-colors";
 
   if (links.linkedin) {
     socialItems.push(`<a href="${links.linkedin}" target="_blank" rel="noopener noreferrer" class="${linkClass}" aria-label="LinkedIn">${socialIcons.linkedin}</a>`);
@@ -104,12 +104,12 @@ export function layout({ title, content, currentPath = "" }) {
 </head>
 <body class="min-h-screen flex flex-col">
   <!-- Header -->
-  <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+  <header class="bg-background-surface border-b border-border-subtle sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
     <nav class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <!-- Logo/Site Title -->
         <div class="flex items-center">
-          <a href="${resolveUrl("/")}" class="text-xl font-bold text-gray-100 hover:text-cyan-400 transition-colors">
+          <a href="${resolveUrl("/")}" class="text-xl font-bold text-foreground-heading hover:text-primary-400 transition-colors">
             ${config.siteTitle}
           </a>
         </div>
@@ -123,7 +123,7 @@ export function layout({ title, content, currentPath = "" }) {
         <div class="md:hidden flex items-center">
           <button
             @click="mobileMenuOpen = !mobileMenuOpen"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-cyan-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500 transition-colors"
+            class="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary-400 hover:bg-background-elevated focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-colors"
             :aria-expanded="mobileMenuOpen"
             aria-label="Toggle navigation menu"
           >
@@ -160,10 +160,10 @@ export function layout({ title, content, currentPath = "" }) {
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 border-t border-gray-800 mt-auto">
+  <footer class="bg-background-surface border-t border-border-subtle mt-auto">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-        <p class="text-gray-500 text-sm">${config.footer.copyright}</p>
+        <p class="text-foreground-subtle text-sm">${config.footer.copyright}</p>
         <div class="flex items-center space-x-4">
               ${renderSocialLinks()}
         </div>

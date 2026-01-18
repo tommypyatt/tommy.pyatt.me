@@ -9,11 +9,11 @@
   }
 
   body {
-    @apply antialiased text-gray-300 bg-gray-950;
+    @apply antialiased text-foreground bg-background;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold text-gray-100;
+    @apply font-semibold text-foreground-heading;
   }
 
   h1 {
@@ -29,14 +29,14 @@
   }
 
   a {
-    @apply text-cyan-400 hover:text-cyan-300 transition-colors;
+    @apply text-primary-400 hover:text-primary-300 transition-colors;
   }
 }
 
 /* Prose/content styling for markdown content */
 @layer components {
   .prose {
-    @apply max-w-none text-gray-300;
+    @apply max-w-none text-foreground;
   }
 
   .prose p {
@@ -44,15 +44,15 @@
   }
 
   .prose h1 {
-    @apply text-3xl md:text-4xl font-bold mb-6 mt-8 text-gray-100;
+    @apply text-3xl md:text-4xl font-bold mb-6 mt-8 text-foreground-heading;
   }
 
   .prose h2 {
-    @apply text-2xl md:text-3xl font-semibold mb-4 mt-8 text-gray-100;
+    @apply text-2xl md:text-3xl font-semibold mb-4 mt-8 text-foreground-heading;
   }
 
   .prose h3 {
-    @apply text-xl md:text-2xl font-semibold mb-3 mt-6 text-gray-100;
+    @apply text-xl md:text-2xl font-semibold mb-3 mt-6 text-foreground-heading;
   }
 
   .prose ul, .prose ol {
@@ -72,15 +72,15 @@
   }
 
   .prose blockquote {
-    @apply border-l-4 border-cyan-500 pl-4 italic text-gray-400 my-4;
+    @apply border-l-4 border-primary-500 pl-4 italic text-foreground-muted my-4;
   }
 
   .prose code {
-    @apply bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-cyan-300;
+    @apply bg-background-elevated px-1.5 py-0.5 rounded text-sm font-mono text-primary-300;
   }
 
   .prose pre {
-    @apply bg-gray-900 border border-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto my-4;
+    @apply bg-background-surface border border-border-subtle text-foreground-heading p-4 rounded-lg overflow-x-auto my-4;
   }
 
   .prose pre code {
@@ -92,11 +92,11 @@
   }
 
   .prose a {
-    @apply text-cyan-400 hover:text-cyan-300 underline;
+    @apply text-primary-400 hover:text-primary-300 underline;
   }
 
   .prose hr {
-    @apply border-gray-700 my-8;
+    @apply border-border my-8;
   }
 
   .prose table {
@@ -104,18 +104,18 @@
   }
 
   .prose th, .prose td {
-    @apply border border-gray-700 px-4 py-2 text-left;
+    @apply border border-border px-4 py-2 text-left;
   }
 
   .prose th {
-    @apply bg-gray-800 font-semibold text-gray-200;
+    @apply bg-background-elevated font-semibold text-foreground-heading;
   }
 
   .prose strong {
-    @apply text-gray-100 font-semibold;
+    @apply text-foreground-heading font-semibold;
   }
 
   .prose em {
-    @apply text-gray-200;
+    @apply text-foreground-heading;
   }
 }
