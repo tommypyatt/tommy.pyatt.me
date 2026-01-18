@@ -3,6 +3,9 @@ export default {
   siteDescription: "Personal website and blog",
   author: "Tommy Pyatt",
 
+  // Full site URL (used for RSS feed and absolute URLs)
+  siteUrl: "https://tommy.pyatt.me",
+
   // Base URL for GitHub Pages deployment
   // Set to "" for root domain, or "/repo-name" for project pages
   baseUrl: "",

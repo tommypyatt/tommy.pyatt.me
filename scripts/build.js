@@ -140,6 +140,53 @@ async function buildBlogPosts() {
   return posts;
 }
 
+function escapeXml(str) {
+  if (!str) return "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+async function buildRSS(posts) {
+  console.log("Building RSS feed...");
+
+  const siteUrl = config.siteUrl || "https://example.com";
+  const feedUrl = `${siteUrl}/feed.xml`;
+
+  const items = posts.map((post) => {
+    const postUrl = `${siteUrl}/blog/${post.slug}/`;
+    const pubDate = new Date(post.date).toUTCString();
+
+    return `    <item>
+      <title>${escapeXml(post.title)}</title>
+      <link>${postUrl}</link>
+      <guid isPermaLink="true">${postUrl}</guid>
+      <description>${escapeXml(post.excerpt)}</description>
+      <pubDate>${pubDate}</pubDate>
+    </item>`;
+  });
+
+  const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeXml(config.siteTitle)}</title>
+    <link>${siteUrl}</link>
+    <description>${escapeXml(config.siteDescription)}</description>
+    <language>en</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${feedUrl}" rel="self" type="application/rss+xml"/>
+${items.join("\n")}
+  </channel>
+</rss>`;
+
+  const outputPath = path.join(OUTPUT_DIR, "feed.xml");
+  await fs.writeFile(outputPath, rss);
+  console.log(`  Created: ${path.relative(OUTPUT_DIR, outputPath)}`);
+}
+
 async function buildBlogIndex(posts) {
   console.log("Building blog index with pagination...");
   const postsPerPage = config.postsPerPage || 5;
@@ -200,6 +247,10 @@ async function build() {
 
   // Build blog index with pagination
   await buildBlogIndex(posts);
+  console.log("");
+
+  // Build RSS feed
+  await buildRSS(posts);
   console.log("");
 
   console.log("Build complete!");

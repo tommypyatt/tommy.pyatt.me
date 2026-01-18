@@ -46,6 +46,7 @@ In a separate terminal, run `npm run serve` to preview changes.
 │   ├── favicon.svg     # Site favicon
 │   └── CNAME           # Custom domain for GitHub Pages
 ├── docs/               # Built site (GitHub Pages)
+│   └── feed.xml        # RSS feed (auto-generated)
 └── site.config.js      # Site configuration
 ```
 
@@ -189,6 +190,24 @@ Customise the introductory text shown at the top of the blog listing page:
 ```javascript
 blogIntro: "My thoughts, ideas and updates. Updated infrequently. Probably."
 ```
+
+### RSS Feed
+
+An RSS feed is automatically generated at `/feed.xml` during each build. The feed includes all published (non-draft) blog posts sorted by date.
+
+The feed uses the `siteUrl` setting from `site.config.js` for absolute URLs:
+
+```javascript
+siteUrl: "https://yourdomain.com"
+```
+
+Feed details:
+- **Location**: `docs/feed.xml` (available at `/feed.xml`)
+- **Format**: RSS 2.0 with Atom namespace
+- **Content**: Post title, link, excerpt, and publication date
+- **Updates**: Regenerated on every build with current timestamp
+
+To let visitors discover your feed, you can link to it from your site or add it to feed directories.
 
 ### Social Links
 
