@@ -4,7 +4,7 @@ title: About Me
 
 I'm a front-end web developer based in Manchester. Here’s a little about me.
 
-I’ve been working in e-commerce since 2012, primarily with Adobe Commerce (formerly Magento). Over the years, I’ve gained extensive hands-on experience with a range of front-end frameworks and tools, including Backbone, Knockout, React, Redux, SASS, Handlebars, Gulp, and Webpack. I’m not tied to any particular technology stack and enjoy learning new tools as they evolve — though I’ve found React to be especially rewarding to work with. This site is built using Gatsby.
+I’ve been working in e-commerce since 2012, primarily with Adobe Commerce (formerly Magento). Over the years, I’ve gained extensive hands-on experience with a range of front-end frameworks and tools, including Backbone, Knockout, React, Redux, SASS, Handlebars, Gulp, and Webpack. I’m not tied to any particular technology stack and enjoy learning new tools as they evolve — though I’ve found React to be especially rewarding to work with.
 
 I care deeply about writing clean, maintainable code — code that others can easily understand, extend, and trust. My goal isn’t just to make something work or fix a bug, but to produce solutions that genuinely improve the system as a whole and help others take pride in their own work as well.
 
