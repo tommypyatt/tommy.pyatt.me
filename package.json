@@ -1,5 +1,5 @@
 {
-  "name": "claude-site",
+  "name": "tommy-pyatt-site",
   "version": "1.0.0",
   "description": "A personal website and blog built with a custom Node-based static site generator",
   "type": "module",
