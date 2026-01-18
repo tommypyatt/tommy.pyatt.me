@@ -30,6 +30,25 @@ async function buildCSS() {
   });
 }
 
+async function copyFavicon() {
+  console.log("Copying favicon...");
+  const inputFavicon = path.join(ROOT_DIR, "src", "favicon.svg");
+  const outputFavicon = path.join(ASSETS_DIR, "favicon.svg");
+
+  await ensureDir(ASSETS_DIR);
+  await fs.copyFile(inputFavicon, outputFavicon);
+  console.log("  Created: assets/favicon.svg");
+}
+
+async function copyCNAME() {
+  console.log("Copying CNAME...");
+  const inputCNAME = path.join(ROOT_DIR, "src", "CNAME");
+  const outputCNAME = path.join(OUTPUT_DIR, "CNAME");
+
+  await fs.copyFile(inputCNAME, outputCNAME);
+  console.log("  Created: CNAME");
+}
+
 async function parseMarkdownFile(filePath) {
   const fileContent = await fs.readFile(filePath, "utf-8");
   const { data, content } = matter(fileContent);
@@ -161,6 +180,14 @@ async function build() {
 
   // Build CSS
   await buildCSS();
+  console.log("");
+
+  // Copy favicon
+  await copyFavicon();
+  console.log("");
+
+  // Copy CNAME for GitHub Pages custom domain
+  await copyCNAME();
   console.log("");
 
   // Build pages

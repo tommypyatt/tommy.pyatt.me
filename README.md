@@ -41,7 +41,10 @@ In a separate terminal, run `npm run serve` to preview changes.
 │   └── blog/           # Blog posts
 ├── templates/          # HTML templates
 ├── scripts/            # Build scripts
-├── src/styles.css      # Tailwind CSS source
+├── src/
+│   ├── styles.css      # Tailwind CSS source
+│   ├── favicon.svg     # Site favicon
+│   └── CNAME           # Custom domain for GitHub Pages
 ├── docs/               # Built site (GitHub Pages)
 └── site.config.js      # Site configuration
 ```
@@ -65,6 +68,16 @@ In a separate terminal, run `npm run serve` to preview changes.
    ```javascript
    baseUrl: "/your-repo-name"
    ```
+
+### Custom Domain
+
+To use a custom domain, edit `src/CNAME` with your domain:
+
+```
+yourdomain.com
+```
+
+The CNAME file is automatically copied to `docs/` during each build. Configure your DNS settings as per [GitHub's custom domain documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
 
 ## Adding & Editing Content
 
