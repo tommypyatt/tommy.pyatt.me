@@ -1,0 +1,29 @@
+{
+  "name": "claude-site",
+  "version": "1.0.0",
+  "description": "A personal website and blog built with a custom Node-based static site generator",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev.js",
+    "clean": "node scripts/clean.js",
+    "serve": "npx serve docs"
+  },
+  "keywords": [
+    "static-site-generator",
+    "blog",
+    "markdown",
+    "tailwind",
+    "alpinejs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "chokidar": "^3.5.3",
+    "gray-matter": "^4.0.3",
+    "marked": "^11.1.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  }
+}

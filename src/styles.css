@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles - Dark Developer Theme */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply antialiased text-gray-300 bg-gray-950;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-100;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  a {
+    @apply text-cyan-400 hover:text-cyan-300 transition-colors;
+  }
+}
+
+/* Prose/content styling for markdown content */
+@layer components {
+  .prose {
+    @apply max-w-none text-gray-300;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose h1 {
+    @apply text-3xl md:text-4xl font-bold mb-6 mt-8 text-gray-100;
+  }
+
+  .prose h2 {
+    @apply text-2xl md:text-3xl font-semibold mb-4 mt-8 text-gray-100;
+  }
+
+  .prose h3 {
+    @apply text-xl md:text-2xl font-semibold mb-3 mt-6 text-gray-100;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-4 pl-6;
+  }
+
+  .prose ul {
+    @apply list-disc;
+  }
+
+  .prose ol {
+    @apply list-decimal;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-cyan-500 pl-4 italic text-gray-400 my-4;
+  }
+
+  .prose code {
+    @apply bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-cyan-300;
+  }
+
+  .prose pre {
+    @apply bg-gray-900 border border-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto my-4;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  .prose img {
+    @apply rounded-lg shadow-md my-6;
+  }
+
+  .prose a {
+    @apply text-cyan-400 hover:text-cyan-300 underline;
+  }
+
+  .prose hr {
+    @apply border-gray-700 my-8;
+  }
+
+  .prose table {
+    @apply w-full border-collapse my-4;
+  }
+
+  .prose th, .prose td {
+    @apply border border-gray-700 px-4 py-2 text-left;
+  }
+
+  .prose th {
+    @apply bg-gray-800 font-semibold text-gray-200;
+  }
+
+  .prose strong {
+    @apply text-gray-100 font-semibold;
+  }
+
+  .prose em {
+    @apply text-gray-200;
+  }
+}
