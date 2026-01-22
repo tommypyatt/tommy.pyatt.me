@@ -95,6 +95,9 @@ async function buildPages() {
     let outputPath;
     if (slug === "index") {
       outputPath = path.join(OUTPUT_DIR, "index.html");
+    } else if (slug === "404") {
+      // GitHub Pages expects 404.html at the root
+      outputPath = path.join(OUTPUT_DIR, "404.html");
     } else {
       const pageDir = path.join(OUTPUT_DIR, slug);
       await ensureDir(pageDir);
