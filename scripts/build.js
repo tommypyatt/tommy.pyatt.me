@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 
 import { cleanDir, ensureDir, getFiles, getSlugFromFilename } from "./utils.js";
+import { processAllImages, generateResponsiveHTML } from "./imageOptimizer.js";
 import { renderPage } from "../templates/page.js";
 import { renderPost } from "../templates/post.js";
 import { renderBlogList } from "../templates/blog-list.js";
@@ -16,6 +17,21 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT_DIR, "content");
 const OUTPUT_DIR = path.join(ROOT_DIR, "docs");
 const ASSETS_DIR = path.join(OUTPUT_DIR, "assets");
+const IMAGES_SRC_DIR = path.join(CONTENT_DIR, "images");
+const IMAGES_DEST_DIR = path.join(ASSETS_DIR, "images");
+
+// Configure custom image renderer for responsive images
+const renderer = new marked.Renderer();
+renderer.image = function (href, title, text) {
+  // Handle the new marked signature where href is an object
+  if (typeof href === "object") {
+    text = href.text || "";
+    title = href.title || "";
+    href = href.href || "";
+  }
+  return generateResponsiveHTML(href, text || title || "");
+};
+marked.use({ renderer });
 
 async function buildCSS() {
   console.log("Building CSS with Tailwind...");
@@ -224,6 +240,10 @@ async function build() {
 
   // Clean output directory
   await cleanDir(OUTPUT_DIR);
+
+  // Process images (must be done before markdown parsing)
+  await processAllImages(IMAGES_SRC_DIR, IMAGES_DEST_DIR);
+  console.log("");
 
   // Build CSS
   await buildCSS();

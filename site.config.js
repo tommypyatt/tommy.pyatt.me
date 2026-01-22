@@ -28,6 +28,12 @@ export default {
     copyright: `© ${new Date().getFullYear()} Tommy Pyatt. All rights reserved.`
   },
 
+  // Image optimization settings
+  images: {
+    sizes: [400, 800, 1200],  // Responsive image widths to generate
+    quality: 80               // WebP/JPEG quality (1-100)
+  },
+
   // Social links for footer (set to null or remove to hide)
   socialLinks: {
     linkedin: "https://uk.linkedin.com/in/tommy-pyatt-69a78461",

@@ -42,6 +42,7 @@ function startWatcher() {
   console.log("Starting development watcher...\n");
   console.log("Watching for changes in:");
   console.log("  - content/**/*.md");
+  console.log("  - content/images/**/*");
   console.log("  - templates/**/*.js");
   console.log("  - src/**/*.css");
   console.log("  - site.config.js");
@@ -54,6 +55,7 @@ function startWatcher() {
   const watcher = chokidar.watch(
     [
       path.join(ROOT_DIR, "content", "**", "*.md"),
+      path.join(ROOT_DIR, "content", "images", "**", "*.{jpg,jpeg,png,webp,gif}"),
       path.join(ROOT_DIR, "templates", "**", "*.js"),
       path.join(ROOT_DIR, "src", "**", "*.css"),
       path.join(ROOT_DIR, "site.config.js")
