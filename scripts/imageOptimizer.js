@@ -170,7 +170,10 @@ export function generateResponsiveHTML(imagePath, alt) {
     : `${baseUrl}/assets/images/${imageInfo.fallback}`;
 
   // Calculate sizes attribute based on typical content width
-  const sizes = "(max-width: 768px) 100vw, 800px";
+  // Content is max-w-4xl (896px) with px-4/sm:px-6/lg:px-8 padding
+  // This gives ~830px max image width on desktop
+  // Using 850px ensures browsers pick the 1200w image for sharp rendering
+  const sizes = "(max-width: 640px) 100vw, (max-width: 1024px) calc(100vw - 3rem), 850px";
 
   return `<picture>
   <source type="image/webp" srcset="${webpSrcset}" sizes="${sizes}">
