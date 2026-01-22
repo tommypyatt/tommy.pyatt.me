@@ -148,6 +148,37 @@ draft: true
 
 To publish, remove the `draft` line or change it to `draft: false`.
 
+### Adding Images
+
+Images are automatically optimized during build. The system generates multiple sizes and WebP versions for better performance.
+
+1. Place images in `content/images/`:
+   ```
+   content/images/my-photo.jpg
+   ```
+
+2. Reference in markdown using the `/images/` path:
+   ```markdown
+   ![Description of image](/images/my-photo.jpg)
+   ```
+
+3. Run `npm run build`
+
+The build process:
+- Generates responsive sizes (400w, 800w, 1200w by default)
+- Creates WebP versions alongside originals
+- Outputs optimized images to `docs/assets/images/`
+- Replaces markdown images with `<picture>` elements containing `srcset`
+
+**Configuration** in `site.config.js`:
+
+```javascript
+images: {
+  sizes: [400, 800, 1200],  // Widths to generate
+  quality: 80               // WebP/JPEG quality (1-100)
+}
+```
+
 ## Customisation
 
 ### Site Title & Metadata
