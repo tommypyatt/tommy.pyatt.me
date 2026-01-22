@@ -170,15 +170,6 @@ The build process:
 - Outputs optimized images to `docs/assets/images/`
 - Replaces markdown images with `<picture>` elements containing `srcset`
 
-**Configuration** in `site.config.js`:
-
-```javascript
-images: {
-  sizes: [400, 800, 1200],  // Widths to generate
-  quality: 80               // WebP/JPEG quality (1-100)
-}
-```
-
 ## Customisation
 
 ### Site Title & Metadata
@@ -220,6 +211,17 @@ Customise the introductory text shown at the top of the blog listing page:
 
 ```javascript
 blogIntro: "My thoughts, ideas and updates. Updated infrequently. Probably."
+```
+
+### Image Processing
+
+Configure responsive image generation:
+
+```javascript
+images: {
+  sizes: [400, 800, 1200],  // Widths to generate
+  quality: 80               // WebP/JPEG quality (1-100)
+}
 ```
 
 ### RSS Feed
