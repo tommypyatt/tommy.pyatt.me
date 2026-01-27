@@ -1,5 +1,5 @@
 ---
-title: Embracing AI - A Force for Good in the Age of Intelligent Systems
+title: 'Embracing AI: A Force for Good in the Age of Intelligent Systems'
 date: 2025-01-18
 excerpt: Artificial intelligence is no longer a distant concept confined to research labs or sci-fi stories. It’s everywhere - from the phones in our pockets to the tools we use at work.
 tags:

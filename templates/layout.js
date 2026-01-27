@@ -110,9 +110,17 @@ export function layout({ title, content, currentPath = "" }) {
       <div class="flex justify-between h-16">
         <!-- Logo/Site Title -->
         <div class="flex items-center">
+          ${currentPath === "index" ? `
+          <h1 class="text-xl font-bold m-0">
+            <a href="${resolveUrl("/")}" class="text-foreground-heading hover:text-primary-400 transition-colors">
+              ${config.siteTitle}
+            </a>
+          </h1>
+          ` : `
           <a href="${resolveUrl("/")}" class="text-xl font-bold text-foreground-heading hover:text-primary-400 transition-colors">
             ${config.siteTitle}
           </a>
+          `}
         </div>
 
         <!-- Desktop Navigation -->

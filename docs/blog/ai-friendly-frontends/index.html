@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Personal website and blog">
   <meta name="author" content="Tommy Pyatt">
-  <title>Tommy Pyatt</title>
+  <title>AI‑Friendly Frontends: How TailwindCSS and AlpineJS Fit Together | Tommy Pyatt</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/assets/styles.css">
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -18,19 +18,17 @@
         <!-- Logo/Site Title -->
         <div class="flex items-center">
           
-          <h1 class="text-xl font-bold m-0">
-            <a href="/" class="text-foreground-heading hover:text-primary-400 transition-colors">
-              Tommy Pyatt
-            </a>
-          </h1>
+          <a href="/" class="text-xl font-bold text-foreground-heading hover:text-primary-400 transition-colors">
+            Tommy Pyatt
+          </a>
           
         </div>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-1">
-          <a href="/" class="px-3 py-2 rounded-md text-sm font-medium text-primary-400 bg-background-elevated transition-colors">Home</a>
+          <a href="/" class="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary-400 hover:bg-background-elevated transition-colors">Home</a>
             <a href="/about/" class="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary-400 hover:bg-background-elevated transition-colors">About</a>
-            <a href="/blog/" class="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary-400 hover:bg-background-elevated transition-colors">Blog</a>
+            <a href="/blog/" class="px-3 py-2 rounded-md text-sm font-medium text-primary-400 bg-background-elevated transition-colors">Blog</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -63,9 +61,9 @@
         x-transition:leave-end="opacity-0 -translate-y-1"
         class="md:hidden pb-3 space-y-1"
       >
-        <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-primary-400 bg-background-elevated transition-colors">Home</a>
+        <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary-400 hover:bg-background-elevated transition-colors">Home</a>
           <a href="/about/" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary-400 hover:bg-background-elevated transition-colors">About</a>
-          <a href="/blog/" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary-400 hover:bg-background-elevated transition-colors">Blog</a>
+          <a href="/blog/" class="block px-3 py-2 rounded-md text-base font-medium text-primary-400 bg-background-elevated transition-colors">Blog</a>
       </div>
     </nav>
   </header>
@@ -74,22 +72,47 @@
   <main class="flex-grow">
     
     <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      
+      <header class="mb-8">
+        <p class="text-foreground-subtle text-sm mb-2">
+          <time datetime="Mon Jan 27 2025 00:00:00 GMT+0000 (Greenwich Mean Time)">January 27, 2025</time>
+        </p>
+        <h1 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-4">AI‑Friendly Frontends: How TailwindCSS and AlpineJS Fit Together</h1>
+        <div class="flex flex-wrap gap-2 mb-6">
+        <span class="px-3 py-1 bg-background-elevated text-primary-400 text-sm rounded-full border border-border">artificial intelligence</span><span class="px-3 py-1 bg-background-elevated text-primary-400 text-sm rounded-full border border-border">tailwindcss</span><span class="px-3 py-1 bg-background-elevated text-primary-400 text-sm rounded-full border border-border">alpinejs</span>
+      </div>
+      </header>
+
       <div class="prose">
-        <p>Hello and welcome! I&#39;m a software developer passionate about building great products and sharing what I learn along the way.</p>
-<h2>What You&#39;ll Find Here</h2>
-<p>This site is my corner of the internet where I share my thoughts on:</p>
-<ul>
-<li><strong>Software Development</strong> - Tips, tutorials, and best practices</li>
-<li><strong>Technology</strong> - Exploring new tools and frameworks</li>
-<li><strong>Personal Projects</strong> - Deep dives into things I&#39;m building</li>
-</ul>
-<h2>Latest Posts</h2>
-<p>Check out the <a href="/blog/">blog</a> to see my latest articles and updates.</p>
-<h2>Get in Touch</h2>
-<p>Feel free to reach out if you&#39;d like to connect or collaborate on something interesting. You can learn more about me on the <a href="/about/">About</a> page.</p>
+        <p>TailwindCSS and AlpineJS are an unusually good match for AI‑assisted and AI‑generated coding because they give AI small, predictable building blocks instead of a sprawling framework to understand.</p>
+<h2>Why TailwindCSS Clicks With AI</h2>
+<p>Tailwind’s utility-first approach gives AI a finite vocabulary of atomic classes to compose, so it doesn’t have to invent or remember bespoke CSS APIs per project. That predictable naming (flex, items-center, gap-4, md:w-1/2, etc.) maps cleanly to natural-language prompts like “center this horizontally with some gap on desktop,” which many assistants already translate into Tailwind snippets.</p>
+<p>Because everything lives in the markup, AI tools can generate fully styled components in one pass instead of juggling separate CSS files and selectors. This drastically reduces context switching for both the model and the human: you review a single JSX/Blade/Twig/HTML block, tweak a few classes, and you’re done.</p>
+<h2>Tailwind + AI in Everyday Workflow</h2>
+<p>Modern assistants already excel at turning plain-English descriptions into Tailwind components: “card with image, title, price, and buy button” routinely yields production-ish code with sensible spacing, typography, and responsive behavior. That makes them particularly strong at boilerplate: skeleton screens, grids, navbars, modals, and marketing sections can all be prompt-driven and then lightly curated by a developer.</p>
+<p>On teams, AI can be trained on your Tailwind config and design tokens so it starts suggesting brand-correct colors, spacing scales, and breakpoints by default. Over time, that repo-specific context means the AI remembers “how we do buttons here” and can refactor entire pages into your established component patterns instead of sprinkling ad-hoc utilities everywhere.</p>
+<h2>Why AlpineJS Fits AI-Generated Markup</h2>
+<p>AlpineJS is a minimalist, HTML-first JavaScript framework: you declare state and behavior via attributes like x-data, x-on, x-show, and x-bind on the elements themselves. That keeps behavior local to the markup the AI is already generating, instead of forcing it to wire up separate component files, imports, and lifecycle hooks like a full SPA framework.</p>
+<p>Because Alpine’s API surface is small and declarative, it’s easy for AI to learn and apply patterns such as “toggle a dropdown,” “show loading while fetching,” or “switch tabs with keyboard support” as short, reusable attribute snippets. Alpine is also well-suited to server-driven HTML (with or without HTMX), where AI can generate backend-rendered templates with light client-side interactivity layered on top.</p>
+<h2>The Tailwind + Alpine Stack in an AI Era</h2>
+<p>When you combine Tailwind and Alpine, you get a lean stack where layout, styling, and basic interactivity are all expressed directly in HTML attributes and class names. For AI, this is ideal: one contiguous block of code describes how a component looks and behaves, so a single prompt can generate or refactor the entire unit without cross-file reasoning.</p>
+<p>This also works nicely with server-side rendering and “HTML-over-the-wire” approaches: the server returns updated Tailwind markup, Alpine manages local state and transitions, and AI can help maintain and evolve both layers through natural-language edits. The result is a workflow where you reserve your attention for domain logic, accessibility, and edge cases while the AI handles the repetitive UI scaffolding.</p>
+<h2>Concrete Example: Prompt-to-Component Loop</h2>
+<p>In practice, a loop might look like this:</p>
+<p>You prompt: “Create a responsive product card grid (2 columns on mobile, 4 on desktop) with hover states and a quick-add button. Use Tailwind and Alpine.”</p>
+<p>The AI returns a HTML template: Tailwind utility classes for layout and spacing, x-data for local state, x-on:click for quick-add, and x-show/x-transition for feedback messages.</p>
+<p>You then ask: “Dark mode, please, and tighten vertical rhythm,” and the AI swaps in dark: variants and adjusts spacing using your Tailwind scale instead of raw CSS.</p>
+<p>Because both TailwindCSS and AlpineJS are compact, composable, and HTML-centric, they give AI the right level of abstraction to be genuinely useful without locking you into a heavy framework or unreadable generated code.</p>
 
       </div>
+
+      <footer class="mt-12 pt-8 border-t border-border">
+        <a href="/blog/" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </a>
+      </footer>
     </article>
   
   </main>
