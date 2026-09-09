@@ -172,7 +172,7 @@ async function buildPages(icons = {}) {
         "@type": "Person",
         "name": config.author,
         "url": config.siteUrl,
-        "jobTitle": "Adobe Commerce Frontend Expert",
+        "jobTitle": "Freelance Web Developer",
         "description": config.siteDescription,
         "sameAs": [
           config.socialLinks.linkedin,

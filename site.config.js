@@ -1,6 +1,6 @@
 export default {
   siteTitle: "Tommy Pyatt",
-  siteDescription: "Adobe Commerce Frontend Expert specialising in Hyvä themes, Tailwind CSS, and Alpine.js. Available for contract. Based in Manchester, UK.",
+  siteDescription: "Freelance web developer with 13+ years of experience, specialising in Adobe Commerce, Hyvä themes, and modern JavaScript. Available for contract and freelance work. Based in Manchester, UK.",
   author: "Tommy Pyatt",
 
   // Full site URL (used for RSS feed and absolute URLs)
